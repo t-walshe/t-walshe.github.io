@@ -1,16 +1,25 @@
 ---
+layout: default
+title: walshe.tech
 ---
-
-<!DOCTYPE html>
-<html>
-<body link="#800080" bgcolor="#ffffff" text="#000080" vlink="#ff0000"><b><font size="6"></font>
-<p align="center"><b><font size="6">T</font><font size="4">EST </font><font size="6">S</font><font size="4">ITE </font><font size="2">One<br>GitHub Pages<br>.tech domain</font><br>Official Home Page</b><font size="1">&nbsp;</font></p>
-<hr>
-<p align="center">
-</p><center>
-
+<div class="container">
     <h1>{{ "Jekyll!" | downcase }}</h1>
 
-</body>
-</html>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit venenatis turpis, elementum faucibus lectus posuere et. Vestibulum non volutpat arcu. Maecenas ut viverra augue. Curabitur efficitur sit amet felis vitae rhoncus. Suspendisse efficitur dolor ac mi lacinia, placerat lobortis justo consectetur. Ut sollicitudin orci ut orci facilisis, eget ultricies quam posuere. Aliquam elementum ligula diam, ac molestie orci euismod vitae. Donec quis placerat velit, sed sagittis nunc. Pellentesque a aliquet felis. Sed tempor ut nibh a bibendum. Duis pretium velit sem. In quis mi vehicula ex pellentesque mattis.
+</div>
+<br/>
+<div class="container">
+    <h3>Blog Posts</h3>
+    {% for post in site.posts %}
+    
+    <div>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <br/>
+        {{ post.date | date_to_string }}
+        <br/>
+        <br/>
+    </div>
+    
+    {% endfor %}
+</div>
 

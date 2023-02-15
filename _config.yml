@@ -1,3 +1,15 @@
-domain: walshe.tech       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://walshe.tech  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: /      # place folder name if the site is served in a subfolder
+# General site settings
+title: Portfolio          # 
+description: Something    # 
+domain: walshe.tech       # Forces HTTPS
+url: https://walshe.tech  # Base hostname and protocol
+baseurl: /                # Default location
+lsi: false                # GitHub Pages default
+safe: true                # GitHub Pages default
+
+# Display settings
+highlighter: rouge
+markdown: kramdown        # Specifies the markdown engine (not using the GitHub one)
+kramdown:
+   math_engine: mathjax   # For rendering LaTeX, we specify mathjax, KaTeX will be used in the pages
+   syntax_highlighter: rouge
