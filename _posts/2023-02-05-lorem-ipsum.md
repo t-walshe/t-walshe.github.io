@@ -2,6 +2,7 @@
 layout: post
 title:  "Lorem ipsum"
 date:   2023-02-15
+format_equations: true
 ---
 
 $$\sum{i}_{j}$$
