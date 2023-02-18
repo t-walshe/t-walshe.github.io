@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  "Lorem ipsum"
+short_title: "Test page"
+series: "Test Posts"
 date:   2023-02-15
 format_equations: true
 ---
 
-$$\sum{i}_{j}$$
+$$-\sum^{}_{n}p(x)\log p(x)$$
 
 # Example header
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit venenatis turpis, elementum faucibus lectus posuere et. Vestibulum non volutpat arcu. Maecenas ut viverra augue. Curabitur efficitur sit amet felis vitae rhoncus. Suspendisse efficitur dolor ac mi lacinia, placerat lobortis justo consectetur. Ut sollicitudin orci ut orci facilisis, eget ultricies quam posuere. Aliquam elementum ligula diam, ac molestie orci euismod vitae. Donec quis placerat velit, sed sagittis nunc. Pellentesque a aliquet felis. Sed tempor ut nibh a bibendum. Duis pretium velit sem. In quis mi vehicula ex pellentesque mattis.

@@ -13,3 +13,25 @@ markdown: kramdown        # Specifies the markdown engine (not using the GitHub 
 kramdown:
    math_engine: mathjax   # For rendering LaTeX, we specify mathjax, KaTeX will be used in the pages
    syntax_highlighter: rouge
+
+# Articles can be grouped into the following collections
+collections:
+  series:
+      output: true
+
+# Default layouts for markdown files in _series, _posts, ...
+defaults:
+  - scope:
+      path: ""
+      type: "series"
+    values:
+      layout: "series"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
