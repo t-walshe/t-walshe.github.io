@@ -18,17 +18,20 @@ layout: default
 
         <br/>
 
-        <h3>Posts</h3>
         {% assign filtered_posts = site.posts | where: 'series', page.name %}
-        {% for post in filtered_posts %}
-        <div>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <br/>
-            {{ post.date | date_to_string }}
-            <br/>
-            <br/>
-        </div>
-        
-        {% endfor %}
+        {% assign num_posts = filtered_posts | size %}
+        {% if num_posts > 0 %}
+            <h3>Posts</h3>
+            {% for post in filtered_posts %}
+
+            <div>
+                {{ post.date | date_to_string }} &nbsp&nbsp
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <br/>
+                <br/>
+            </div>
+            
+            {% endfor %}
+        {% endif %}
     </div>
 </div>

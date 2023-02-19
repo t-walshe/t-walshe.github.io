@@ -3,7 +3,7 @@ layout: post
 title:  "Lorem ipsum"
 short_title: "Test page"
 series: "Test Posts"
-date:   2023-02-15
+date:   2023-02-01
 format_equations: true
 ---
 
