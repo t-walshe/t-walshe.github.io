@@ -5,6 +5,7 @@ short_title: "Test page"
 series: "Test Posts"
 date:   2023-02-01
 format_equations: true
+visible: true
 ---
 
 $$-\sum^{}_{n}p(x)\log p(x)$$
