@@ -11,7 +11,7 @@ format_equations: False
 
 # Definitions
 
-<sup><a href="#cite-first-test">[1]</a></sup>
+<a style="text-decoration: none;" href="#cite-first-test"><sup>[1]</sup></a>
 
 # References
 <ol>
