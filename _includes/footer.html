@@ -17,3 +17,15 @@
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 {% endif %}
+<hr>
+<div style="text-align: center;">
+    {% if page.date %}
+        {% if page.name %}
+            <p>{{page.name}} &nbsp&nbsp&nbsp&nbsp {{ page.date | date: "%B %-d, %Y" }}</p>   
+        {% else %}
+            <p>{{page.title}} &nbsp&nbsp&nbsp&nbsp {{ page.date | date: "%B %-d, %Y" }}</p>
+        {% endif %}
+    {% else %}
+        <p>{{page.title}}</p>
+    {% endif %}
+</div>
