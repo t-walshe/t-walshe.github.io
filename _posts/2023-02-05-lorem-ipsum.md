@@ -8,6 +8,8 @@ format_equations: true
 visible: true
 ---
 
+$$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
+
 $$-\sum^{}_{n}p(x)\log p(x)$$
 
 # Example header
