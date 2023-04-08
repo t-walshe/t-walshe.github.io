@@ -11,15 +11,15 @@ short_title: Series
         </header>
         
         {% for series in site.series %}
-
-        <div>
-            <div class="post-meta text-muted"><em>{{ series.topic}}</em></div>
-            <a href="{{ series.url }}">{{ series.name }}</a> &nbsp&nbsp
-            <p>{{ series.content | markdownify }}</p>
-            <br/>
-            <br/>
-        </div>
-        
+            {% if series.visible %}
+                <div>
+                    <div class="post-meta text-muted"><em>{{ series.topic}}</em></div>
+                    <a href="{{ series.url }}">{{ series.name }}</a> &nbsp&nbsp
+                    <p>{{ series.content | markdownify }}</p>
+                    <br/>
+                    <br/>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 </div>

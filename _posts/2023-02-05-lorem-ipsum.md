@@ -5,7 +5,7 @@ short_title: "Test page"
 series: "Test Posts"
 date:   2023-02-01
 format_equations: true
-visible: true
+visible: false
 ---
 
 $$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
