@@ -20,6 +20,11 @@ In summary, a model-centric approach is centered around taking any dataset and p
 
 
 # Lab
+The [lab assignment](https://github.com/dcai-course/dcai-lab/blob/master/data_centric_model_centric/Lab%20-%20Data-Centric%20AI%20vs%20Model-Centric%20AI.ipynb) for the first lecture in the series is focussed on simple text classification ("good" or "bad" review sentiment). Using a pre-trained sentence transformer without additional fine-tuning is sufficient to achieve above 90% accuracy on the task (see [notebook](https://github.com/t-walshe/Introduction-to-Data-Centric-AI/blob/main/lab_1/Simple%20Text%20Classifier.ipynb)).
+
+Visual inspection of the training data reveals a subpopulation of written reviews that are largely mislabelled and can be characterised by the presence of markdown in the text. Simply removing these samples leads to an increase in accuracy when evaluated against the validation dataset. In the next lecture, more sophisticated techniques are introduced to identify label errors. 
+
+
 
 # References
 <ol>
