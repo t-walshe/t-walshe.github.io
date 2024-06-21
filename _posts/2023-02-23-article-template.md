@@ -4,7 +4,7 @@ title:  "Template"
 short_title: "Template"
 series: "Test Posts"
 date:   2023-02-23
-format_equations: False
+format_equations: false
 ---
 
 # Synopsis

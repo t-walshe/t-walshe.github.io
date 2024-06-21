@@ -6,7 +6,7 @@ series: "Introduction to Data-Centric AI"
 date:   2023-03-31
 format_equations: false
 include_bokeh: false
-visible: true
+visible: false
 ---
 
 # Introduction to Data-Centric AI
