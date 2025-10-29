@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Series
-short_title: Series
+title: Posts
+short_title: Posts
 ---
 
 <div class="row post">
@@ -13,7 +13,7 @@ short_title: Series
         {% for series in site.series %}
             {% if series.visible %}
                 <div>
-                    <div class="post-meta text-muted"><em>{{ series.topic}}</em></div>
+                    <div class="post-meta text-muted"><em>{{ series.topic }}</em></div>
                     <a href="{{ series.url }}">{{ series.name }}</a> &nbsp&nbsp
                     <p>{{ series.content | markdownify }}</p>
                     <br/>
