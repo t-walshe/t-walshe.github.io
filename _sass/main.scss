@@ -205,8 +205,8 @@
 
  /* --- Readable text column --- */
 :root {
-  /* 90 characters per line is the target “measure” */
-  --measure: 90ch;
+  /* 70 characters per line is the target “measure” */
+  --measure: 70ch;
 
   /* Base body sizing — tweak to taste */
   --font-size: clamp(16px, 0.4vw + 15px, 18px);
