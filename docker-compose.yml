@@ -3,16 +3,36 @@ version: "3.9"
 services:
   site:
     build: .
-    # Keep the container running on file changes with live reload
-    command: bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload --incremental --force_polling
-    ports:
-      - "4000:4000"    # Jekyll server
-      - "35729:35729"  # LiveReload
+    # Default to dev profile for local work
+    profiles: ["dev"]
+    command: >
+      bundle exec jekyll serve
+      --host 0.0.0.0 --port 4000
+      --livereload --force_polling
+      --drafts --future
     environment:
       JEKYLL_ENV: development
+      TZ: Europe/London
+    ports:
+      - "4000:4000"
+      - "35729:35729"
     volumes:
-      - .:/site                      # your repo mounted in
-      - bundle_cache:/site/vendor/bundle  # cache gems across rebuilds
+      - .:/site
+      - bundle_cache:/site/vendor/bundle
+
+  site-prod:
+    build: .
+    profiles: ["prod"]
+    command: >
+      sh -lc "bundle exec jekyll clean &&
+               JEKYLL_ENV=production bundle exec jekyll build"
+    environment:
+      JEKYLL_ENV: production
+      TZ: Europe/London
+    volumes:
+      - .:/site
+      - bundle_cache:/site/vendor/bundle
+    # no ports; this just writes ./_site for deploy
 
 volumes:
   bundle_cache:

@@ -1,29 +1,30 @@
-# Use a multi-arch Ruby base (works on Apple Silicon and Intel)
+# Dockerfile
 FROM ruby:3.3-bookworm
 
-# Install build tools (for native gems) and Node (for asset pipelines if used)
+# System deps for native gems & timezones
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends build-essential nodejs && \
+    apt-get install -y --no-install-recommends build-essential nodejs tzdata && \
     rm -rf /var/lib/apt/lists/*
 
-# Workdir inside the container
+# Set your local timezone so "future" vs "past" matches your expectations
+ENV TZ=Europe/London
+
 WORKDIR /site
 
-# Install gems first (cached by Docker layer)
-# Copy only Gemfile(s) first to maximize cache hits
+# Install gems first (cached layer)
 COPY Gemfile* ./
 RUN gem install bundler:2 && \
     bundle config set path 'vendor/bundle' && \
     bundle install || true
-# The '|| true' lets this succeed even if no Gemfile.lock exists yet
 
-# Now bring in the rest of the project
+# Then add the rest of the project
 COPY . .
 
-# Expose Jekyll dev server and LiveReload ports
+# Expose Jekyll + LiveReload
 EXPOSE 4000 35729
 
-# Use force_polling so file changes on macOS bind mounts are detected
+# Default command is dev-friendly; prod will override via compose profile
 CMD ["bundle", "exec", "jekyll", "serve", \
      "--host", "0.0.0.0", "--port", "4000", \
-     "--livereload", "--incremental", "--force_polling"]
+     "--livereload", "--incremental", "--force_polling", \
+     "--drafts", "--future"]
