@@ -5,21 +5,38 @@ short_title: Posts
 ---
 
 <div class="row post">
-    <div class="col ml-auto mr-auto">
-        <header class="post-header">
-            <h1 class="post-title">{{ page.title }}</h1>
-        </header>
-        
-        {% for series in site.series %}
-            {% if series.visible %}
-                <div>
-                    <div class="post-meta text-muted"><em>{{ series.topic }}</em></div>
-                    <a href="{{ series.url }}">{{ series.name }}</a> &nbsp&nbsp
-                    <p>{{ series.content | markdownify }}</p>
-                    <br/>
-                    <br/>
-                </div>
+  <div class="col ml-auto mr-auto">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+
+    <p>These posts represent ideas about research that I've written about, or been involved in. All opinions are my own and do not represent those of my employer.</p>
+    <br>
+
+    
+
+    {% for series in site.series %}
+        {% if series.visible %}
+            <div>
+            <h3>{{ series.name }}</h3>
+            <p>{{ series.content | markdownify }}</p>
+
+            {% assign filtered_posts = site.posts | where: 'series', series.name | sort: "date" | reverse %}
+            {% assign num_posts = filtered_posts | size %}
+            {% if num_posts > 0 %}
+                {% for post in filtered_posts %}
+                    {% if post.visible %}
+                        <div>
+                            {{ post.date | date_to_string }} &nbsp&nbsp
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                            <br/>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             {% endif %}
-        {% endfor %}
-    </div>
+            <br><br>
+            </div>
+        {% endif %}
+    {% endfor %}
+  </div>
 </div>
