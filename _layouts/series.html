@@ -6,10 +6,6 @@ layout: default
     <div class="col ml-auto mr-auto">
         <header class="post-header">
             <h1 class="post-title">{{ page.name }}</h1>
-        
-            <p class="post-meta text-muted">
-                {{ page.topic }}
-            </p>
         </header>
     
         <article class="post-content">
@@ -17,8 +13,7 @@ layout: default
         </article>
 
         <br/>
-
-        {% assign filtered_posts = site.posts | where: 'series', page.name %}
+        {% assign filtered_posts = site.posts | where: 'series', page.name | sort: "date" | reverse %}
         {% assign num_posts = filtered_posts | size %}
         {% if num_posts > 0 %}
             <h3>Posts</h3>
