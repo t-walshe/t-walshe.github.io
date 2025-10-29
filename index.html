@@ -1,41 +1,38 @@
 ---
 layout: default
-title: walshe.tech
-format_equations: true
+title: Tom Walshe
+format_equations: false
 ---
 
 <div class="row post">
     <div class="col ml-auto mr-auto">
-        <h1>{{ "walshe.tech" | downcase }}</h1>
+        <h1>{{ "Tom Walshe" }}</h1>
         <p>
-            I work as an AI Research Scientist, focusing on Data-Centric AI and LLMs.
+            I am currently a researcher at <a href="https://snorkel.ai/">Snorkel AI</a> focusing on data research.
         </p>
 
-        <p>
-            In 2023, I completed a DPhil (PhD) in Computer Science at the University of Oxford, researching applications of machine learning to understand problems in cybersecurity within businesses.
-        </p>
 
         <p>
-            On this website, I'll including notes on recent research papers that cover alignment of LLMs.
+            Previously I've working in AI/ML research at JP Morgan and Luminance. 
+            In 2023, I completed a DPhil (PhD) in Computer Science at the University of Oxford.
         </p>
+        <br>
 
-        <p>
-            Posts are organised by <a href="/series">Series</a>. The website is built using <a href="https://jekyllrb.com">Jekyll</a>, <a href="https://katex.org">KaTeX</a>, <a href="https://github.com/bokeh/bokeh">Bokeh</a>, and hosted using GitHub.
-        </p>
-
-        <br/>
-        <br/>
         <h3>Posts</h3>
         {% for post in site.posts %}
             {% if post.visible %}
                 <div>
-                    <div class="post-meta text-muted"><em>{{ post.series}}</em></div>
-                    {{ post.date | date_to_string }} &nbsp&nbsp
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                    <br/>
+                    {{ post.date | date_to_string }} &nbsp&nbsp <a href="{{ post.url }}">{{ post.title }}</a>
                     <br/>
                 </div>
             {% endif %}
         {% endfor %}
+        <br>
+        <br>
+
+        <h3>About this site</h3>
+        <p>
+            This site is built using <a href="https://jekyllrb.com/">Jekyll</a>, hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>, and the source code is on <a href="https://github.com/t-walshe/t-walshe.github.io">GitHub</a>.
+        </p>
     </div>
 </div>
