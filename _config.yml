@@ -1,6 +1,6 @@
 # General site settings
-title: Portfolio          # 
-description: Something    # 
+title: Tom Walshe          # 
+description: Portfolio and posts    # 
 domain: walshe.tech       # Forces HTTPS
 url: https://walshe.tech  # Base hostname and protocol
 baseurl: /                # Default location
