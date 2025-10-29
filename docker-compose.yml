@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  site:
+    build: .
+    # Keep the container running on file changes with live reload
+    command: bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload --incremental --force_polling
+    ports:
+      - "4000:4000"    # Jekyll server
+      - "35729:35729"  # LiveReload
+    environment:
+      JEKYLL_ENV: development
+    volumes:
+      - .:/site                      # your repo mounted in
+      - bundle_cache:/site/vendor/bundle  # cache gems across rebuilds
+
+volumes:
+  bundle_cache:
