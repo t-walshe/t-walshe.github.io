@@ -201,3 +201,60 @@
          }
      }
  }
+
+
+ /* --- Readable text column --- */
+:root {
+  /* 90 characters per line is the target “measure” */
+  --measure: 90ch;
+
+  /* Base body sizing — tweak to taste */
+  --font-size: clamp(16px, 0.4vw + 15px, 18px);
+  --line-height: 1.65;
+}
+
+/* Apply the measure to your content wrapper */
+.measure {
+  /* Constrain the inline size to target, but never exceed the viewport on small screens */
+  max-inline-size: min(var(--measure), 92vw);
+  margin-inline: auto;           /* center the column */
+  padding-inline: 1rem;          /* breathing room at tiny widths */
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;             /* nicer line breaks (supported in modern browsers) */
+  hyphens: auto;                 /* better breaks for long words */
+}
+
+/* Improve rhythm inside the column */
+.measure p,
+.measure li {
+  max-inline-size: var(--measure); /* re-assert measure for nested blocks */
+}
+
+.measure p + p { margin-block-start: 0.8em; }
+
+/* Headings should not look wider than body text (cap their line length too) */
+.measure h1, .measure h2, .measure h3,
+.measure h4, .measure h5, .measure h6 {
+  max-inline-size: var(--measure);
+  line-height: 1.2;
+  text-wrap: balance;            /* reduce ragged headings (modern browsers) */
+}
+
+/* Media and code: stay within the column, but don’t wrap code weirdly */
+.measure img, .measure video, .measure figure {
+  display: block;
+  max-inline-size: 100%;
+  height: auto;
+}
+
+.measure pre {
+  overflow-x: auto;              /* allow horizontal scroll for long code lines */
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Optional: nicer lists inside the column */
+.measure ul, .measure ol { padding-inline-start: 1.2em; }
