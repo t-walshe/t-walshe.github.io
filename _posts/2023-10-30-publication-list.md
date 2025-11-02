@@ -9,7 +9,19 @@ include_bokeh: false
 visible: true
 ---
 
-<ol>
+## AI/ML
+<ul>
+<li id="cite-auto-benchmark">
+    <span><cite>Automating Benchmark Design. Dsouza et al. (2025)</cite></span>
+</li>
+
+<li id="cite-auto-label">
+    <span><cite>Automatic labelling with open-source LLMs using dynamic label schema integration. Walshe et al. (2025)</cite></span>
+</li>
+</ul>
+
+## Cybersecurity
+<ul>
 <li id="cite-empirical-study">
     <span><cite>An Empirical Study of Bug Bounty Programs. Walshe and Simpson (2020)</cite></span>
 </li>
@@ -29,9 +41,6 @@ visible: true
 <li id="cite-thesis">
     <span><cite>Supporting Data-driven Software Development Life-cycles with Bug Bounty Programmes. Walshe (2023)</cite></span>
 </li>
-
-<li id="cite-auto-label">
-    <span><cite>Automatic labelling with open-source LLMs using dynamic label schema integration. Walshe et al. (2025)</cite></span>
-</li>
+</ul>
 
 
